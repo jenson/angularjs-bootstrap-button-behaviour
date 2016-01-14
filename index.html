@@ -1,0 +1,75 @@
+<!Doctype html>
+<html ng-app="firstMod">
+<head>
+<title>Bootstrap Button Behaviour Simple Demonstration In AngularJS</title>
+<script src="js/angular.min.js" rel="stylesheet"></script>
+<script src="app/app.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css"/>
+
+</head>
+<body>
+
+<div class="container">
+ 
+	<div class="row">
+
+	<h2 class="bg-primary" style="padding: 5px; border-radius: 5px;">Bootstrap Button Behaviour Simple Demonstration In AngularJS</h2>
+
+	</div>
+
+</div>
+
+<div class="container" ng-controller="firstController">
+    
+	<div class="row">
+        <div class="col-xs-6">
+				 
+					
+					<h2>Button Colors</h2>
+					
+						<ul ng-init="btnclr = ['Default','Primary','Success','Info','Warning','Danger','Link']">
+							
+							<li ng-repeat="btn_clr in btnclr" ng-click="assignClass(btn_clr, 1)"><a href="#">{{btn_clr}}</a></li>
+							
+						</ul>
+						
+					<h2>Button Sizes</h2>
+					
+						<ul ng-init="btnsze = [{'k': 'lg', 'v': 'Large'}, {'k': 'sm', 'v': 'Small'}, {'k': 'xs', 'v': 'Extra Small'}, {'k': 'block', 'v': 'Block'}]">
+							
+							<li  class="btn-link" ng-repeat="btn_sze in btnsze" ng-click="assignClass(btn_sze, 2)"><a href="#">{{btn_sze.v}}</a></li>
+							
+						</ul>	
+						
+					<h2>Button Behaviour</h2>
+					
+						<ul ng-init="btnbhvr = ['Active', 'Disabled']">
+							
+							<li  class="btn-link" ng-repeat="btn_bhvr in btnbhvr" ng-click="assignClass(btn_bhvr, 3)"><a href="#">{{btn_bhvr}}</a></li>
+							
+						</ul>		
+
+				</div>
+       
+				<div class="col-xs-6">
+				    
+					<h4 id="finalBtn">{{btn_sze_txt}} {{btn_clr_txt}} {{btn_bhvr_txt}} Button</h4>
+					<button type="button" ng-click="sayMeeeee();" class="btn btn-{{btn_clr}} btn-{{btn_sze_k}} {{btn_bhvr}}">Click Me!!</button>
+					
+				</div>
+    </div>
+
+	<footer class="footer">
+      <div class="container">
+        <p class="text-muted" align="right"><a href="http://jenson.in/iblog/about-2/" target="_blank">JensOwn.com</a></p>
+      </div>
+   </footer>
+	
+</div>
+
+
+
+
+</body>
+</html>
